@@ -1,0 +1,18 @@
+.overlayRow {
+}
+.overlayColumn {
+  width: 10vw;
+  background-color: transparent;
+  height: 146%;
+  display: inline-block;
+}
+
+#overlayWrapper {
+  height: 125vh;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
