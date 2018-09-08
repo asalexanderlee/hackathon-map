@@ -1,34 +1,42 @@
 import React, { Component } from "react";
 import "./Overlay.css";
 import union from "../union.png";
+import InfoPopup from "./InfoPopup";
 
-const Circle = props => {
-  const onExit = () => {
-    document.getElementById(props.popupId).style.visibility = "hidden";
+class Circle extends Component {
+  render() {
+    return (
+      <div className="circle" id={this.props.id}>
+        <span onClick={this.props.onClick}>{this.props.number}</span>
+        <div className="tooltip">{this.props.description}</div>
+        <div className="buildingPopup" id={this.props.popupId}>
+          {this.props.popupInfo}
+          <br />
+          <br />
+          <span onClick={this.props.onExit} className="exit-smart-view">
+            Exit Smart View
+          </span>
+        </div>
+      </div>
+    );
+  }
+}
+export default class Overlay extends Component {
+  state = {
+    showPopup: false
+  };
+  handleExit = () => {
+    this.setState({ showPopup: false });
+    document.getElementById("unionPopup").style.visibility = "hidden";
     document.getElementById("blackout").style.visibility = "hidden";
     document.getElementById("unionPic").style.visibility = "hidden";
   };
-  const onClick = () => {
-    document.getElementById(props.popupId).style.visibility = "visible";
+  handleClick = () => {
+    this.setState({ showPopup: true });
+    document.getElementById("unionPopup").style.visibility = "visible";
     document.getElementById("blackout").style.visibility = "visible";
     document.getElementById("unionPic").style.visibility = "visible";
   };
-  return (
-    <div className="circle" id={props.id}>
-      <span onClick={onClick}>{props.number}</span>
-      <div className="tooltip">{props.description}</div>
-      <div className="buildingPopup" id={props.popupId}>
-        {props.popupInfo}
-        <br />
-        <br />
-        <span onClick={onExit} className="exit-smart-view">
-          Exit Smart View
-        </span>
-      </div>
-    </div>
-  );
-};
-export default class Overlay extends Component {
   render() {
     return (
       <React.Fragment>
@@ -44,6 +52,7 @@ export default class Overlay extends Component {
           />
           <img src={union} alt="Alvarez College Union" id="unionPic" />
           <div id="blackout" />
+          {this.state.showPopup && <InfoPopup />}
           <Circle
             id="duke"
             onClick={this.handleClick}
