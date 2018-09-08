@@ -14,14 +14,19 @@
 
 .panel {
   padding: 10px;
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 60px;
   color: white;
   font-family: "Open Sans", sans-serif;
   text-align: center;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 12px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  line-height: 90px;
-  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0.8;
+  /* line-height: 90px; */
+}
+
+.panel:hover {
+  box-shadow: none;
 }
