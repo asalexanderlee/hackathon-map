@@ -13,9 +13,6 @@ class App extends Component {
       <div className="App">
         <Map />
         <Overlay />
-        <div>
-          <InfoPopup />
-        </div>
       </div>
     );
   }
