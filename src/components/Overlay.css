@@ -7,9 +7,114 @@
   font-weight: 800;
   color: white;
   position: absolute;
+  cursor: pointer;
+}
+.circle:hover {
+  box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+#union {
   left: 1100px;
   top: 220px;
 }
-.circle:hover {
-  background-color: green;
+#duke {
+  left: 788px;
+  top: 157px;
+}
+#sentelle {
+  left: 498px;
+  top: 202px;
+}
+#cannon {
+  left: 352px;
+  top: 136px;
+}
+#richardsonStadium {
+  left: 893px;
+  top: 699px;
+}
+#library {
+  left: 545px;
+  top: 620px;
+}
+#baker {
+  left: 1741px;
+  top: 806px;
+}
+#chambers {
+  left: 23px;
+  top: 420px;
+}
+#wall {
+  left: 228px;
+  top: 831px;
+}
+
+.tooltip {
+  position: relative;
+  top: 10px;
+  font-size: 20px;
+  background-color: black;
+  opacity: 0.7;
+  width: 100px;
+  border-radius: 10px;
+  padding: 10px;
+  visibility: hidden;
+}
+
+.circle:hover .tooltip {
+  visibility: visible;
+}
+
+.buildingPopup {
+  visibility: hidden;
+  background-color: white;
+  color: black;
+  font-weight: 400;
+  font-size: 18px;
+  width: 500px;
+  font-family: "Open Sans";
+  height: auto;
+  padding: 15px;
+  border-radius: 5px;
+  position: relative;
+  border: 3px solid darkblue;
+}
+#unionPopup {
+  right: 700px;
+  top: -120px;
+  z-index: 5;
+}
+
+.exit-smart-view {
+  color: #2b7c6b;
+  font-size: 20px;
+  font-weight: 700;
+  background-color: #96cec2;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 7;
+}
+.exit-smart-view:hover {
+  background-color: #b3e0d6;
+}
+
+#blackout {
+  background-color: black;
+  opacity: 0.6;
+  position: absolute;
+  width: 100vw;
+  height: 140vh;
+  top: 0;
+  z-index: 1;
+  visibility: hidden;
+}
+
+#unionPic {
+  z-index: 4;
+  position: absolute;
+  top: 71px;
+  left: -138px;
+  visibility: hidden;
 }
