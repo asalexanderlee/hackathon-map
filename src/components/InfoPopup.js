@@ -3,8 +3,16 @@ import "./InfoPopup.css";
 
 const Panel = props => {
   return (
-    <div className="panel" style={{ backgroundColor: props.color }}>
-      {props.title}
+    <div className="flip-container" ontouchstart="this.classList.toggle('hover');">
+      <div className="flipper" style={{ backgroundColor: props.color }}>
+        <div className="front">
+          {props.title}
+        </div>
+        <div className="back">
+          <h1>Hey</h1>
+          {props.info}
+        </div>
+      </div>
     </div>
   );
 };
@@ -28,7 +36,7 @@ export default class InfoPopup extends Component {
     return (
       <div className="popup">
         <div className="row">
-          <Panel color={this.chooseRandomColor(colors)} title={"After Midnight"} />
+          <Panel color={this.chooseRandomColor(colors)} title={"After Midnight"} info="Lorem ipsum"/>
           <Panel color={this.chooseRandomColor(colors)} title={"Live Thursday"} />
           <Panel color={this.chooseRandomColor(colors)} title={"Duke Family Performance Hall"} />
           <Panel color={this.chooseRandomColor(colors)} title={"Davis Cafe"} />
